@@ -1,0 +1,477 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--dark-color: #000!important;
+	--gray-color: #ccc!important;
+	--light-color: #fff!important;
+	--button-color: #f44336!important;
+	--height-header: 4.6rem;
+}
+
+html {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 10px;
+}
+
+.container {
+	max-width: 200rem;
+	max-height: 100rem;
+	margin: 0 auto;
+}
+
+.container-fluid {
+	max-width: 200rem;
+	margin: 0 auto;
+}
+
+.container-small {
+	max-width: 80rem;
+	margin: 0 auto;
+	padding: 6.4rem 1.6rem;
+}
+
+.bg-dark {
+	background-color: var(--dark-color);
+}
+
+.heading-content {
+	font-size: 3rem;
+    font-weight: 400;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+}
+
+.sub-heading-content {
+	font-size: 1.5rem;
+    opacity: 0.5;
+    margin: 1.5rem 0;
+}
+
+#main {
+
+}
+
+#header {
+	background-color: var(--dark-color);
+    height: var(--height-header);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+#nav {
+
+}
+
+#nav li {
+	display: inline-block;
+	list-style: none;
+	position: relative;
+}
+
+#nav li a {
+	color: var(--light-color);
+	font-size: 1.5rem;
+	line-height: var(--height-header);
+	padding: 0 2.4rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#nav li:hover a,
+#nav .subnav li:hover a {
+	background-color: var(--gray-color);
+	color: var(--dark-color);
+	display: inline-block;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+#nav .subnav {
+	background-color: var(--light-color);
+	display: none;
+}
+
+#nav li:hover .subnav {
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+
+#nav .subnav li {
+	display: block;
+	width: 16rem;
+	height: 3.8rem;
+}
+
+#nav .subnav li a {
+	background-color: transparent;
+	color: var(--dark-color);
+	display: block;
+	height: 100%;
+	line-height: 3.8rem;
+	padding: 0 1.6rem;
+	text-transform: capitalize;
+	width: 100%;
+}
+
+#search {
+	color: var(--light-color);
+	cursor: pointer;
+    float: right;
+    font-size: 1.5rem;
+    padding: 1.45rem 2.35rem;
+    position: absolute;
+    transition: all 0.5s;
+    transform: translate(0, -50%);
+    top: 50%;
+    right: 0;
+}
+
+#search:hover {
+	background-color: var(--button-color);
+}
+
+#slider {
+	margin-top: var(--height-header);
+	padding-top: 50%;
+	position: relative;
+	text-align: center;
+	background: url('https://www.w3schools.com/w3images/chicago.jpg') top center / cover no-repeat;
+}
+
+.slider-text {
+	color: var(--light-color);
+	padding: 3.2rem 1.6rem;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.slider-text .slider-text__title h3 {
+	font-size: 2.4rem;
+	text-transform: capitalize;
+	margin: 1rem 0;
+	font-weight: 400;
+}
+
+.slider-text .slider-text__sub-title p {
+	font-size: 1.5rem;
+	font-weight: bolder;
+	margin: 1.5rem 0;
+}
+
+#content {
+	
+}
+
+#band {
+	text-align: center;
+}
+
+#band .band__content {
+	margin: 1.5rem 0;
+	font-size: 1.5rem;
+	text-align: justify;
+	line-height: 1.5;
+}
+
+#band .band__members {
+	padding: 3.2rem;
+}
+
+#band .band__members-item {
+	display: inline-block;
+	width: 33%;
+	max-height: 22.2rem;
+	list-style: none;
+}
+
+#band .band__members-name h4 {
+	font-size: 1.5rem;
+	margin: 1.5rem 0;
+	font-weight: 400;
+}
+
+#band .band__members-image img {
+	max-width: 15.4rem;
+	max-height: 15.4rem;
+	border-radius: .4rem;
+	margin-bottom: 1.6rem;
+}
+
+#tour {
+	text-align: center;
+	width: 80rem;
+}
+
+
+#tour .tour__title,
+#tour .tour__sub {
+	color: var(--light-color)!important;
+}
+
+#tour .tour__date {
+	margin-top: 1.8rem;
+}
+
+#tour .tour__date-item {
+	color: #888!important;
+	padding: .8rem 1.6rem;
+	border: 0.1rem solid #ddd;
+	background-color: var(--light-color);
+	list-style: none;
+	text-align: left;
+	font-size: 1.5rem;
+	max-width: 77rem;
+	max-height: 40rem;
+}
+
+#tour .tour__date-item:first-child {
+	border-bottom: none;
+}
+
+#tour .tour__date-item:last-child {
+	border-top: none;
+}
+
+#tour .tour__button {
+	background-color: var(--button-color);
+	color: var(--light-color);
+	margin-left: 1.6rem;
+	padding: .2rem .8rem;
+	border: none;
+	outline: none;
+}
+
+#tour .tour__button--small {
+	background-color: var(--dark-color);
+	border-radius: 50%;
+	font-size: 1.5rem;
+	padding: .2rem .6rem;
+	float: right;
+	margin-right: 1.6rem;
+}
+
+#tour .tour__infor {
+	padding: 3.2rem 0;
+}
+
+#tour .tour__infor-item {
+	width: 33.333%;
+	display: inline-block;
+	padding: 0 .8rem;
+	background-color: var(--light-color);
+	background-clip: content-box;
+}
+
+#tour .tour__infor-item:first-child {
+	float: left;
+	padding-left: 0;
+}
+
+#tour .tour__infor-item:last-child {
+	float: right;
+	padding-right: 0;
+}
+
+.tour__card {
+	overflow: hidden;
+}
+
+.tour__card .tour__card--image {
+	position: relative;
+	overflow: hidden;
+}
+
+.tour__card .tour__card--image::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transition: all .5s;
+}
+
+.tour__card .tour__card--image:hover::before {
+	background-color: rgba(0, 0, 0, .4);
+	z-index: 10;
+}
+
+.tour__card .tour__card--image img {
+	width: 100%;
+	display: block;
+	min-height: 18.48rem;
+	transition: all .5s;
+}
+
+.tour__card .tour__card--image:hover img {
+	transform: scale(1.1);
+}
+
+#tour .tour__card--title h5 {
+	font-weight: bolder;
+	font-size: 1.5rem!important;
+}
+
+.tour__card .tour__card--date {
+	opacity: 0.6;
+}
+
+.tour__card .tour__card--title,
+.tour__card .tour__card--date,
+.tour__card .tour__card--content {
+	margin: 1.5rem 0;
+	padding: 0 1.6rem;
+	font-size: 1.5rem;
+	text-align: left;
+}
+
+.tour__card .tour__card--content {
+	line-height: 2.2rem;
+}
+
+.tour__card .tour__button--dark {
+	margin: 0 0 1.6rem 1.6rem;
+	float: left;
+}
+
+
+.btn-dark {
+	display: inline-block;
+	background-color: var(--dark-color);
+	color: var(--light-color);
+	font-size: 1.5rem;
+	padding: 1rem 1.6rem;
+	height: 3.8rem;
+	transition: all .5s;
+	text-align: center;
+	border: none;
+}
+
+
+.btn-dark:hover {
+	background-color: var(--gray-color);
+	color: var(--dark-color);
+	cursor: pointer;
+}
+
+.contact {
+	text-align: center;
+	overflow: hidden;
+}
+
+.contact .contact__content {
+	padding: 3.2rem 0;
+}
+
+.contact .contact__text,
+.contact .contact__form {
+	width: 50%;
+}
+
+.contact .contact__text {
+	display: inline-block;
+	display: inline-block;
+    text-align: left;
+    font-size: 1.8rem;
+    margin-bottom: 4.6rem;
+    line-height: 2.8rem;
+}
+
+.contact .contact__list {
+	list-style: none;
+}
+
+.contact .contact__icon {
+	margin-right: 1rem;
+}
+
+.contact .contact__icon-first {
+	margin-right: 1.4rem;
+}
+
+.contact .contact__form {
+	float: right;
+}
+
+.contact .contact__input {
+	width: 47%;
+	margin: 0 1rem;
+	padding: 0.8rem;
+	border: .1rem solid var(--gray-color);
+}
+
+.contact .contact__input--fluid {
+	width: 100%;
+	margin: 1rem 0 0;
+}
+
+.contact__input:first-child {
+	margin-left: 0;
+}
+
+.contact__input--second-child {
+	margin-right: 0!important;
+}
+
+.contact .contact__btn {
+	line-height: 2.3rem;
+	text-transform: uppercase;
+	margin: 1.6rem 0;
+	padding: .8rem 1.6rem;
+	margin-left: auto;
+	float: right;
+}
+
+#map {
+	text-align: center;
+}
+
+#map .map__image {
+	width: 100%;
+}
+
+#footer {
+	padding: 6.4rem 1.6rem;
+	text-align: center;
+	background-color: rgba(204, 204, 204, .15);
+}
+
+#footer .footer__list {
+	list-style: none;
+}
+
+
+#footer .footer__item {
+	display: inline-block;
+}
+
+#footer .footer__item .footer__icon {
+	font-size: 2.4rem;
+	opacity: .7;
+	margin: 0 .2rem;
+	transition: all .5s;
+}
+
+#footer .footer__item:hover .footer__icon {
+	opacity: .3;
+	cursor: pointer;
+	transform: scale(1.2);
+}
+
+#footer .footer__text,
+#footer .footer__link {
+	margin: 2.35rem 0;
+	font-size: 1.5rem;
+	color: rgba(136, 136, 136, 1);
+}
