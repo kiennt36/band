@@ -8,6 +8,7 @@
 	--dark-color: #000!important;
 	--gray-color: #ccc!important;
 	--light-color: #fff!important;
+	--green-color: #009688!important;
 	--button-color: #f44336!important;
 	--height-header: 4.6rem;
 }
@@ -15,6 +16,7 @@
 html {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 10px;
+	scroll-behavior: smooth;
 }
 
 .container {
@@ -38,6 +40,35 @@ html {
 	background-color: var(--dark-color);
 }
 
+.clear {
+	clear: both;
+}
+
+.hidden {
+	display: block!important;
+}
+
+.list {
+	list-style: none;
+}
+
+.item a {
+	text-decoration: none;
+	background-color: inherit;
+	color: var(--light-color);
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	display: inherit;
+	line-height: var(--height-header);
+}
+
+.item:hover a {
+	background-color: var(--gray-color);
+	color: var(--dark-color);
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
 .heading-content {
 	font-size: 3rem;
     font-weight: 400;
@@ -52,8 +83,14 @@ html {
     margin: 1.5rem 0;
 }
 
-#main {
+img[alt="www.000webhost.com"] {
+	display: none;
+	opacity: 0;
+	z-index: 0;
+}
 
+#main {
+	
 }
 
 #header {
@@ -72,20 +109,14 @@ html {
 
 #nav li {
 	display: inline-block;
-	list-style: none;
 	position: relative;
 }
 
 #nav li a {
-	color: var(--light-color);
-	font-size: 1.5rem;
 	line-height: var(--height-header);
 	padding: 0 2.4rem;
-	text-decoration: none;
-	text-transform: uppercase;
 }
 
-#nav li:hover a,
 #nav .subnav li:hover a {
 	background-color: var(--gray-color);
 	color: var(--dark-color);
@@ -94,25 +125,29 @@ html {
 	cursor: pointer;
 }
 
-#nav .subnav {
+#nav .subnav,
+#nav-small .subnav {
 	background-color: var(--light-color);
 	display: none;
 }
 
-#nav li:hover .subnav {
+#nav li:hover .subnav,
+#nav-small li:hover .subnav {
 	display: block;
 	position: absolute;
 	top: 100%;
 	left: 0;
 }
 
-#nav .subnav li {
+#nav .subnav li,
+#nav-small .subnav li {
 	display: block;
 	width: 16rem;
 	height: 3.8rem;
 }
 
-#nav .subnav li a {
+#nav .subnav li a,
+#nav-small .subnav li a {
 	background-color: transparent;
 	color: var(--dark-color);
 	display: block;
@@ -138,6 +173,40 @@ html {
 
 #search:hover {
 	background-color: var(--button-color);
+}
+
+#nav-small {
+	display: none;
+	background-color: var(--dark-color);
+}
+
+#nav-small .nav-small__list {
+	background-color: inherit;
+}
+
+#nav-small .nav-small__btn {
+	float: right;
+}
+
+#nav-small .nav-small__icon {
+	font-size: 1.5rem;
+	color: var(--light-color);
+	padding: 1.55rem 2.4rem;
+	transition: all .5s;
+}
+
+#nav-small .nav-small__icon:hover {
+	color: var(--dark-color);
+	background-color: var(--gray-color);
+	cursor: pointer;
+}
+
+#nav-small .nav-small__list {
+	display: none;
+}
+
+#nav-small .nav-small__item a {
+	padding: 0 2.4rem;
 }
 
 #slider {
@@ -202,15 +271,14 @@ html {
 }
 
 #band .band__members-image img {
-	max-width: 15.4rem;
-	max-height: 15.4rem;
+	width: 70%;
 	border-radius: .4rem;
 	margin-bottom: 1.6rem;
 }
 
 #tour {
 	text-align: center;
-	width: 80rem;
+	max-width: 80rem;
 }
 
 
@@ -263,6 +331,12 @@ html {
 
 #tour .tour__infor {
 	padding: 3.2rem 0;
+}
+
+#tour .tour__infor-list::after {
+	content: "";
+	display: block;
+	clear: both;
 }
 
 #tour .tour__infor-item {
@@ -408,11 +482,11 @@ html {
 	width: 47%;
 	margin: 0 1rem;
 	padding: 0.8rem;
-	border: .1rem solid var(--gray-color);
+	border: .1rem solid rgba(0, 0, 0, .3);
 }
 
 .contact .contact__input--fluid {
-	width: 100%;
+	width: 100%!important;
 	margin: 1rem 0 0;
 }
 
@@ -474,4 +548,269 @@ html {
 	margin: 2.35rem 0;
 	font-size: 1.5rem;
 	color: rgba(136, 136, 136, 1);
+}
+
+#myModal {
+	display: none;
+	padding-top: 10rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#myModal .myModal__bg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .2);
+
+}
+
+#myModal .myModal__section {
+	z-index: 10;
+	position: relative;
+	max-width: 90rem;
+	margin: 0 auto;
+	background-color: var(--light-color);
+	animation-name: dropDown;
+	animation-duration: .5s;
+	animation-timing-function: cubic-bezier(1,-0.05,0,.56);
+}
+
+@keyframes dropDown {
+	from {
+		transform: translateY(-30%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+#myModal .myModal__heading {
+	position: relative;
+	background-color: var(--green-color);
+}
+
+#myModal .myModal__title {
+	padding: 3.2rem 1.6rem;
+}
+
+#myModal .myModal__title--text {
+	font-size: 3rem;
+	color: var(--light-color);
+	text-align: center;
+	margin: 1rem 0;
+	line-height: 4.5rem;
+	font-weight: 400;
+	letter-spacing: .5rem;
+}
+
+#myModal .myModal__btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#myModal .myModal__icon {
+	color: var(--light-color);
+	transition: all .5s;
+}
+
+#myModal .myModal__btn--icon {
+	font-size: 2.5rem;
+	padding: .8rem;
+}
+
+#myModal .myModal__btn--icon:hover {
+	color: var(--dark-color);
+	cursor: pointer;
+}
+
+#myModal .myModal__content {
+	padding: 0 1.6rem;
+	font-size: 1.5rem;
+}
+
+#myModal .myModal__text {
+	margin: 1.5rem 0;
+}
+
+#myModal .myModal__form--group {
+	width: 100%;
+}
+
+#myModal .myModal__input {
+	width: 100%;
+	padding: .8rem;
+	border: .1rem solid var(--gray-color);
+	font-size: 1.5rem;
+}
+
+#myModal .myModal__form--btn {
+	margin: 1.6rem 0;
+	background-color: var(--green-color);
+	color: var(--light-color);
+	text-align: center;
+	line-height: 2.2rem;
+	transition: all .5s;
+}
+
+#myModal .myModal__form--btn:hover,
+#myModal .myModal__footer--btn:hover {
+	color: var(--dark-color);
+	background-color: var(--gray-color);
+	cursor: pointer;
+}
+
+#myModal .myModal__footer {
+	padding: 1.6rem 0;
+}
+
+#myModal .myModal__btn--close {
+	color: inherit;
+	font-size: 1.5rem;
+	border: none;
+	outline: none;
+	background: unset;
+	text-transform: uppercase;
+	cursor: pointer;
+	padding: 1.6rem;
+    width: 100%;
+    line-height: 2.2rem;
+}
+
+#myModal .myModal__footer--btn {
+	float: left;
+	font-size: inherit;
+	background-color: var(--button-color);
+	color: var(--light-color);
+	padding: .8rem 1.6rem;
+	border: none;
+	outline: none;
+	transition: all .5s;
+}
+
+#myModal .myModal__footer--help {
+	float: right;
+	color: var(--dark-color);
+}
+
+#myModal .myModal__footer::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#myModal .myModal__footer--link {
+	color: #2196F3;
+}
+/* responsive*/
+
+@media (max-width: 768px) {
+	#contact .contact__input {
+		width: 46%;
+	}
+
+	#contact .contact__input:first-child {
+		margin-right: .8rem;
+	}
+
+	#contact .contact__input--second-child {
+		margin-left: .8rem;
+	}
+
+	#myModal {
+		padding-top: 5rem;
+	}
+
+	#myModal .myModal__section {
+		margin: 0 13.4rem;
+	}
+}
+
+@media (max-width: 540px) {
+
+	#nav .nav-item {
+		display: none;
+	}
+
+	#nav .nav-item--primary {
+		display: inline-block;
+		z-index: 10;
+	}
+
+	#search {
+		display: none;
+	}
+
+	#nav-small {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		display: block;
+	}
+
+	#nav-small .nav-small__item {
+		position: relative;
+	}
+
+	#nav-small li:hover .subnav {
+		width: 100%;
+	}
+
+	#nav-small .subnav li {
+		width: 100%;
+	}
+
+	#nav-small .subnav li:hover a {
+		display: block;
+		background-color: var(--gray-color);
+		color: var(--dark-color);
+	}
+
+	#slider .slider-text {
+		display: none;
+	}
+
+	#content .band__members-item,
+	#content .tour__infor-item {
+		width: 100%;
+	}
+
+	#content .tour__infor-item {
+		padding: 0 0 1.6rem;
+	}
+
+	#contact .contact__content,
+	#contact .contact__form {
+		width: 100%;
+	}
+
+	#contact .contact__content {
+		text-align: left;
+		overflow: hidden;
+	}
+
+	#contact .contact__text {
+		margin-bottom: 1.6rem;
+		width: 100%;
+	}
+
+	#contact .contact__input {
+		width: 100%;
+		margin: 0 0 .8rem;
+	}
+
+	#myModal .myModal__section {
+		margin: 0 1rem;
+	}
 }

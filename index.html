@@ -3,27 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>The Band</title>
 	<link rel="stylesheet" href="./assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 </head>
 <body>
 	<div id="main">
 		<div id="header">
-			<ul id="nav">
-				<li><a href="#">Home</a></li>
-				<li><a href="#band">Band</a></li>
-				<li><a href="#tour">Tour</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li>
+			<ul id="nav" class="list">
+				<li class="item nav-item nav-item--primary"><a href="#">Home</a></li>
+				<li class="item nav-item"><a href="#band">Band</a></li>
+				<li class="item nav-item"><a href="#tour">Tour</a></li>
+				<li class="item nav-item"><a href="#contact">Contact</a></li>
+				<li class="item nav-item">
 					<a>
 						More
 						<i class="fas fa-caret-down"></i>
 					</a>
-					<ul class="subnav">
-						<li><a href="#">Merchandise</a></li>
-						<li><a href="#">Extras</a></li>
-						<li><a href="#">Media</a></li>
+					<ul class="subnav list">
+						<li class="item"><a href="#">Merchandise</a></li>
+						<li class="item"><a href="#">Extras</a></li>
+						<li class="item"><a href="#">Media</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -31,10 +31,34 @@
 			<div id="search">
 				<i class="fas fa-search"></i>
 			</div>
+
+			<div id="nav-small">
+				<div class="nav-small__btn">
+					<i class="nav-small__icon fas fa-bars"></i>
+				</div>
+
+				<div class="clear"></div>
+
+				<ul class="nav-small__list list">
+					<li class="nav-small__item item"><a href="#band">Band</a></li>
+					<li class="nav-small__item item"><a href="#tour">Tour</a></li>
+					<li class="nav-small__item item"><a href="#contact">Contact</a></li>
+					<li class="nav-small__item item">
+						<a>
+							More
+							<i class="fas fa-caret-down"></i>
+						</a>
+						<ul class="subnav list">
+							<li class="item"><a href="#">Merchandise</a></li>
+							<li class="item"><a href="#">Extras</a></li>
+							<li class="item"><a href="#">Media</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
 
 		<div id="slider">
-			<!-- <img src="https://www.w3schools.com/w3images/chicago.jpg" alt=""> -->
 			<div class="slider-text">
 				<div class="slider-text__title">
 					<h3>Los Angeles</h3>
@@ -68,7 +92,7 @@
 							</div>
 
 							<div class="band__members-image">
-								<img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="member image">
+								<img src="assets/image/bandmember.jpg" alt="member image">
 							</div>
 						</li>
 						<li class="band__members-item">
@@ -77,7 +101,7 @@
 							</div>
 
 							<div class="band__members-image">
-								<img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="member image">
+								<img src="assets/image/bandmember.jpg" alt="member image">
 							</div>
 						</li>
 						<li class="band__members-item">
@@ -86,7 +110,7 @@
 							</div>
 
 							<div class="band__members-image">
-								<img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="member image">
+								<img src="assets/image/bandmember.jpg" alt="member image">
 							</div>
 						</li>
 					</ul>
@@ -126,7 +150,7 @@
 							<li class="tour__infor-item">
 								<div class="tour__card">
 									<div class="tour__card--image">
-										<img src="https://www.w3schools.com/w3images/newyork.jpg" alt="Paris Image">
+										<img src="assets/image/newyork.jpg" alt="Paris Image">
 									</div>
 
 									<div class="tour__card--title">
@@ -141,7 +165,7 @@
 										Praesent tincidunt sed tellus ut rutrum sed vitae justo.
 									</div>
 
-									<div class="btn-dark tour__button--dark">
+									<div class="btn-dark tour__button--dark" data-toggle="modal" data-target="#myModal">
 										Buy Tickets
 									</div>
 								</div>
@@ -149,7 +173,7 @@
 							<li class="tour__infor-item">
 								<div class="tour__card">
 									<div class="tour__card--image">
-										<img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris Image">
+										<img src="assets/image/paris.jpg" alt="Paris Image">
 									</div>
 
 									<div class="tour__card--title">
@@ -164,7 +188,7 @@
 										Praesent tincidunt sed tellus ut rutrum sed vitae justo.
 									</div>
 
-									<div class="btn-dark tour__button--dark">
+									<div class="btn-dark tour__button--dark" data-toggle="modal" data-target="#myModal">
 										Buy Tickets
 									</div>
 								</div>
@@ -172,7 +196,7 @@
 							<li class="tour__infor-item">
 								<div class="tour__card">
 									<div class="tour__card--image">
-										<img src="https://www.w3schools.com/w3images/sanfran.jpg" alt="Paris Image">
+										<img src="assets/image/sanfran.jpg" alt="Paris Image">
 									</div>
 
 									<div class="tour__card--title">
@@ -187,7 +211,7 @@
 										Praesent tincidunt sed tellus ut rutrum sed vitae justo.
 									</div>
 
-									<div class="btn-dark tour__button--dark">
+									<div class="btn-dark tour__button--dark" data-toggle="modal" data-target="#myModal">
 										Buy Tickets
 									</div>
 								</div>
@@ -227,9 +251,9 @@
 
 						<div class="contact__form">
 							<form action="xuly.php" method="GET" target="_blank">
-								<input type="text" name="usename" class="contact__input" required placeholder="Name">
+								<input type="text" name="username" class="contact__input" required placeholder="Name">
 								<input type="text" name="email" class="contact__input contact__input--second-child" required placeholder="Email">
-								<input type="text" name="Messenger" class="contact__input contact__input--fluid" required placeholder="Messenger">
+								<input type="text" name="messenger" class="contact__input contact__input--fluid" required placeholder="Messenger">
 								<input type="submit" class="btn-dark contact__btn" value="Send" />
 							</form>
 						</div>
@@ -238,7 +262,7 @@
 			</div>
 
 			<div id="map">
-				<img class="map__image" src="https://www.w3schools.com/w3images/map.jpg" alt="">
+				<img class="map__image" src="assets/image/map.jpg" alt="">
 			</div>
 		</div>
 
@@ -272,6 +296,64 @@
 				Powered by <a href="https://kiennt.site/" class="footer__link" target="_blank">Kiennt.site</a>
 			</p>
 		</div>
+
+		<div id="myModal">
+			<div class="myModal__section">
+				<div class="myModal__heading">
+					<div class="myModal__title">
+						<h3 class="myModal__title--text">
+							<i class="myModal__icon myModal__title--icon fas fa-suitcase"></i>
+							Tickets
+						</h3>
+					</div>
+					<div class="myModal__btn myModal__btn-close" data-dismiss="close">
+						<i class="myModal__icon myModal__btn--icon fas fa-times-circle"></i>
+					</div>
+				</div>
+
+				<div class="myModal__content">
+					<form class="myModal__form" action="xuly.php" method="GET">
+						<div class="myModal__form--group">
+							<p class="myModal__text">
+								<i class="fas fa-shopping-cart"></i>
+								Tickets, $15 per person
+							</p>
+							<input class="myModal__input" required type="text" name="quantity" placeholder="How many?">
+						</div>
+					
+
+						<div class="myModal__form--group">
+							<p class="myModal__text">
+								<i class="fas fa-user"></i>
+								Send To
+							</p>
+							<input class="myModal__input" required type="email" name="email" placeholder="Enter email">
+						</div>
+
+						<div class="myModal__form--group myModal__form--btn">
+							<button type="submit" class=" myModal__input myModal__btn--close">
+								Pay
+								<i class="myModal__form--icon fas fa-check"></i>
+							</button>
+						</div>
+					</form>
+
+					<div class="myModal__footer">
+						<button class="myModal__footer--btn myModal__btn-close" data-dismiss="close">
+							Close
+							<i class="fas fa-times"></i>
+						</button>
+
+						<div class="myModal__footer--help">
+							Need <a href="#" class="myModal__footer--link">help?</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="myModal__bg"></div>
+		</div>
 	</div>
+
+	<script src="assets/js/main.js"></script>
 </body>
 </html>
